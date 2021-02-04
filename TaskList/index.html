@@ -3,18 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../public/style.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
-    <link rel="manifest" href="./favicon/site.webmanifest">
-    <link rel="mask-icon" href="./favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
+    <!-- <link rel="stylesheet" href="../public/style.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <title>Task List</title>
 </head>
 <body>
-    
-
+    <div class="container mx-auto w-9/12 p-1 m-1 shadow sh border-gray-400 border-opacity-40 border-1 rounded-sm">
+        <div class="grid row-auto w-full">
+            <div class="grid col-auto w-full">
+                <div id="main" class="card">
+                    <div class=""> <!--card-content-->
+                        <span class="font-Righteous">Task List</span>  <!--card title-->
+                        <div class="row-auto">
+                            <form id="task-form">
+                                <div class="input-field col s12 ">
+                                    <input type="text" name="task" id="task"  class="  w-full h-4 border-b-1 border-gray-600 focus:outline-none">
+                                    <label for="task" class=" text-xxs">New Task</label>
+                                </div>
+                                <input type="submit" value="ADD Task" class="btn">
+                            </form>
+                        </div>
+                    </div>
+                    <div class="">
+                        <h5 id="task-title">Tasks</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 </html>

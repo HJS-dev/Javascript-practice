@@ -4,13 +4,16 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "tailwindcss": "^2.0.2"
+    "@tailwindcss/forms": "^0.2.1",
+    "materialize-css": "^1.0.0-rc.2",
+    "tailwindcss": "^2.0.2",
+    "win-node-env": "^0.4.0"
   },
   "devDependencies": {},
   "scripts": {
-    "tw-build":"npx tailwindcss-cli@latest build src/style.css -o public/style.css",
-    "tw-config":"npx tailwindcss-cli@latest init",
-    "tw-production":"NODE-ENV npx tailwindcss-cli@latest build src/style.css -o public/style.css"
+    "tw-build": "npx tailwindcss-cli@latest build src/style.css -o public/style.css",
+    "tw-config": "npx tailwindcss-cli@latest init",
+    "tw-production":"NODE_ENV=production npx tailwindcss-cli@latest build src/style.css -o public/style.css"
   },
   "keywords": [],
   "author": "",
