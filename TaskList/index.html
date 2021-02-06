@@ -12,32 +12,43 @@
     <meta name="theme-color" content="#ffffff">
     <!-- <link rel="stylesheet" href="../public/style.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <title>Task List</title>
 </head>
 <body>
-    <div class="container mx-auto w-9/12 p-1 m-1 shadow sh border-gray-400 border-opacity-40 border-1 rounded-sm">
-        <div class="grid row-auto w-full">
-            <div class="grid col-auto w-full">
+    <div class="container">
+        <div class="row">
+            <div class="col s12">
                 <div id="main" class="card">
-                    <div class=""> <!--card-content-->
-                        <span class="font-Righteous">Task List</span>  <!--card title-->
-                        <div class="row-auto">
+                    <div class="card-content">
+                        <span class="card-title">Task List</span>
+                        <div class="row">
                             <form id="task-form">
-                                <div class="input-field col s12 ">
-                                    <input type="text" name="task" id="task"  class="  w-full h-4 border-b-1 border-gray-600 focus:outline-none">
-                                    <label for="task" class=" text-xxs">New Task</label>
+                                <div class="input-field col s12">
+                                    <input type="text" name="task" id="task">
+                                    <label for="task">New Task</label>
                                 </div>
-                                <input type="submit" value="ADD Task" class="btn">
+                                <input type="submit" value="Add Task" class="btn">
                             </form>
                         </div>
                     </div>
-                    <div class="">
+                    <div class="card-action">
                         <h5 id="task-title">Tasks</h5>
+                        <div class="input-field col s12">
+                            <input type="text" name="filter" id="filter">
+                            <label for="filter">Filter Tasks</label>
+                        </div>
+                        <ul class="collection"></ul>
+                        <a href="" class="clear-tasks btn black">Clear Tasks</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 </html>
