@@ -40,12 +40,24 @@ function addTask(e) {
     li.appendChild(link)
     // Append li to ul 
     taskList.appendChild(li)
+    // Store in LS
+    storeTaskInLocalStoreage(taskInput.value)
     // Cleare input 
     taskInput.value = ''
 
 console.log(li)
 
     e.preventDefault()
+}
+
+function storeTaskInLocalStoreage(task) {
+    let tasks
+    if (localStorage.getItem('tasks') === null) {
+        tasks = []
+    } else {
+        tasks = JSON.parse(localStorage.getItem('tasks'))
+    }
+    tasks.push(task)
 }
 
 // Remove task
@@ -78,6 +90,7 @@ function filterTasks(e) {
     document.querySelectorAll('.collection-item').forEach
         
         (function (task) {
+            console.log(task)
             const item = task.firstChild.textContent
 
 if (item.toLowerCase().indexOf(text) != -1){task.style.display = 'block'}
