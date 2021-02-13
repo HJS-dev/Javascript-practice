@@ -9,6 +9,8 @@ const taskInput = document.querySelector('#task')
 laodEventListeners()
 
 function laodEventListeners() {
+    // DOM load event
+    document.addEventListener('DOMContentLoaded', getTasks)
     // add task event 
     form.addEventListener('submit', addTask)
     // Remove task event 
@@ -18,7 +20,34 @@ function laodEventListeners() {
     // Filter Tasks event
     filter.addEventListener('keyup', filterTasks)
 }
-
+// Get tasks from las 
+function getTasks() {
+    let tasks
+    if (localStorage.getItem('tasks') === null) {
+        tasks = []
+    } else {
+        tasks = JSON.parse(localStorage.getItem('tasks'))
+    }
+    
+    tasks.forEach(function (task) {
+        // Creat li element
+        const li = document.createElement('li')
+        // Add class name 
+        li.className = 'collection-item'
+        // Create text node and append to li 
+        li.appendChild(document.createTextNode(task))
+        // Create new link element 
+        const link = document.createElement('a')
+        // Add class anme
+        link.className = 'delete-item secondary-content'
+        // Add icon html 
+        link.innerHTML = '<i class="fa fa-remove"></i>'
+        // Append the link to li 
+        li.appendChild(link)
+        // Append li to ul 
+        taskList.appendChild(li)
+    })
+}
 
 function addTask(e) {
     if (taskInput.value === '') {
@@ -42,6 +71,7 @@ function addTask(e) {
     taskList.appendChild(li)
     // Store in LS
     storeTaskInLocalStoreage(taskInput.value)
+  
     // Cleare input 
     taskInput.value = ''
 
@@ -58,6 +88,8 @@ function storeTaskInLocalStoreage(task) {
         tasks = JSON.parse(localStorage.getItem('tasks'))
     }
     tasks.push(task)
+
+    localStorage.setItem('tasks', JSON.stringify(tasks))
 }
 
 // Remove task
