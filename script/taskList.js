@@ -98,7 +98,9 @@ function removeTask(e) {
         if (confirm('Are you sure?')) {
 
             e.target.parentElement.parentElement.remove()
-            removeTaskFromLocalStorage(e.target.parentElement.parentElement)
+
+
+        removeTaskFromLocalStorage(e.target.parentElement.parentElement)
 
         }
     }
@@ -116,7 +118,7 @@ function removeTaskFromLocalStorage(taskItem) {
             tasks.splice(index, 1)
         }
     })
-    localStorage.setItem(index, 1)
+    localStorage.setItem('tasks', JSON.stringify(tasks))
 
 }
 
@@ -127,6 +129,13 @@ function clearTasks() {
     while (taskList.firstChild) {
         taskList.removeChild(taskList.firstChild)
     }
+
+    // Clear form ls 
+    clearTasksFromLocalStorage()
+}
+
+function clearTasksFromLocalStorage() {
+    localStorage.clear()
 }
 
 function filterTasks(e) {
