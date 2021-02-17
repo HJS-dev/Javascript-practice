@@ -1,7 +1,13 @@
-document.getElementById('loan-form').addEventListener('submit', calculateResults)
+document.getElementById('loan-form').addEventListener('submit', function (e) {
+    document.getElementById('results').style.display = 'none'
+    document.getElementById('loading').style.display = 'block'
+
+    setTimeout(calculateResults, 2000)
+    e.preventDefault()
+})
 
 
-function calculateResults(e) {
+function calculateResults() {
     console.log('calculating....')
     const amount = document.getElementById('amount')
     const interest = document.getElementById('interest')
@@ -21,16 +27,20 @@ function calculateResults(e) {
         monthlyPayment.value = monthly.toFixed(2)
         totalPayment.value = (monthly * calculatedPayment).toFixed(2)
         totalInterest.value = ((monthly * calculatedPayment) - principal).toFixed(2)
+
+        document.getElementById('results').style.display = 'block'
+        document.getElementById('loading').style.display = 'none'
     }
     else {
        errorMessage('Please check your number')
         }
 
-    e.preventDefault()
 }
 
 
 function errorMessage(error) {
+    document.getElementById('results').style.display = 'none'
+    document.getElementById('loading').style.display = 'none'
     // create a div
     const errorDiv = document.createElement('div')
 
@@ -40,7 +50,11 @@ function errorMessage(error) {
     errorDiv.className = 'alert alert-danger'
     errorDiv.appendChild(document.createTextNode(error))
 
+    card.insertBefore(errorDiv, heading)
 
+    setTimeout(clearError, 3000)
+}
 
-    
+function clearError() {
+    document.querySelector('.alert').remove()
 }
