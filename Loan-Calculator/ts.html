@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Hello, world!</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="../public/style.css">
+   
+    <style>
+        #loading,
+        #results {display: none; }
+ 
+    </style>
+</head>
+
+<body class="bg-gray-800">
+    <div class="container mx-auto mt-5">
+        <div class="grid grid-flow-row auto-rows-auto  mx-auto">
+            <div class="grid grid-flow-col auto-cols-auto w-3/6 self-center justify-self-center justify-items-center ">
+                <div class="card w-full max-w-md"> <!--card .card-body-->
+                    <h1 class="font-semibold font-Oswald text-gray-800 text-4xl pb-3 mb-5">Loan Calculator</h1>
+                    <form id="loan-form" class="relative w-full">
+                        <div class="form-group"> <!--form-group-->
+                            <div class="input-group"> <!--input-group-->
+                                <span class="input-group-addon">$</span> 
+                                <input type="number" class="form-control" id="amount" placeholder="Loan Amount">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">%</span>
+                                <input type="number" class="form-control" id="interest" placeholder="Interest">
+                            </div>
+                        </div>
+                            
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input type="number" class="form-control focus:outline-none focus:border-blue-500 focus:border-opacity-50 " id="years" placeholder="Years To Repay">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Calculate" class="btn btn-dark btn-block">
+                        </div>
+                    </form>
+                    <!-- LOADER -->
+
+                    <div id="loading">
+                        <img src="img/loading.gif" alt="">
+                    </div>
+
+                    <!-- RESULTS -->
+                    <div id="results" class="pt-4">
+                        <h5>Results</h5>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">Monthly Payment</span>
+                                <input type="number" class="form-control" id="monthly-payment" disabled>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">Total Payment</span>
+                                <input type="number" class="form-control" id="total-payment" disabled>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">Total Interest</span>
+                                <input type="number" class="form-control" id="total-interest" disabled>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="../script/Loan-C.js"></script>
+</body>
+
+</html>

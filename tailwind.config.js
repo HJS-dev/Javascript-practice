@@ -3,6 +3,9 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      width: (theme) => ({
+        '1':'1%'
+      }),
       fontSize: {
         xxs: ['0.50rem', { lineHeight: '1rem' }],
       },
@@ -15,6 +18,9 @@ module.exports = {
           "'Righteous'",
           
         ],
+        Oswald: [
+          "'Oswald'", 'sans-serif'
+        ]
 
 },
       borderWidth: {
